@@ -20,6 +20,7 @@
                                 <th>Post Content</th>
                                 <th>Post Image</th>
                                 <th>Full Link</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             <?php

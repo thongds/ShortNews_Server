@@ -15,7 +15,7 @@
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover">
                             <tr>
-                                <th>ID</th>
+                                <th>Type</th>
                                 <th>Name</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -40,7 +40,7 @@
                                         $status_button = '<a href='.$active_url.'  class=" col-sm-3 btn btn-sm btn-warning btn-flat pull-left">Deactive</a>';
                                     }
                                     echo '<tr class="'.$class.'">';
-                                    echo '<td>'.$list['id'].'</td>';
+                                    echo '<td>'.$list['type'].'</td>';
                                     echo '<td class="col-md-4">'.$list['name'].'</td>';
                                     $labeClass = $list['active']?"label-success" : "label-danger";
                                     $labeName = $list['active']?"Active" : "Block";
@@ -102,6 +102,11 @@
                         @else
                             <input type="input" name ="name" value = "<?php echo $update_data["name"]; ?>" class="form-control" id="exampleInputEmail1" >
                         @endif
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Type</label>
+                            <input type="input" name ="type" value = "<?php echo $update_data!=null?$update_data["type"]:""; ?>"
+                                   class="form-control" id="exampleInputEmail1" placeholder="type" >
+                        </div>
                     </div>
                     <div class="checkbox">
                         <label>

@@ -333,12 +333,6 @@
                         <li class="active"><a href="{{URL("admin/newspaper")}}"><i class="fa fa-circle-o"></i> Newspaper</a></li>
                         <li><a href="{{URL("admin/session_day")}}"><i class="fa fa-circle-o"></i> Session Day</a></li>
                         <li><a href="{{URL("admin/news")}}"><i class="fa fa-circle-o"></i> News</a></li>
-                        <li><a href="{{URL("admin/default-image")}}"><i class="fa fa-circle-o"></i> Default Image</a></li>
-                        <li><a href="{{URL("admin/subtitletype")}}"><i class="fa fa-circle-o"></i> Subtitle Type</a></li>
-                        <li><a href="{{URL("admin/song-type")}}"><i class="fa fa-circle-o"></i> Song Type</a></li>
-
-                        <li><a href="{{URL("admin/provider-payment")}}"><i class="fa fa-circle-o"></i> provider-payment</a></li>
-                        <li><a href="{{URL("admin/subscribe-type")}}"><i class="fa fa-circle-o"></i> subscribe-type</a></li>
                     </ul>
                 </li>
                 <li class="active treeview">

@@ -17,9 +17,9 @@ use Validator;
 class SocialContentTypeController extends CDUAbstractController {
 
     private $mRouter = ['GET' => 'get_social_content_type', 'POST' => 'post_social_content_type'];
-    private $uniqueFields = array('name');
+    private $uniqueFields = array('name','type');
     private $privateKey = 'id';
-    private $validateForm = ['name'=>'required|max:255'];
+    private $validateForm = ['name'=>'required|max:255','type' => 'required|numeric'];
     private $pagingNumber = 10;
     private $validateMaker;
     public function __construct(){
@@ -32,7 +32,9 @@ class SocialContentTypeController extends CDUAbstractController {
         $this->page = $request->get('page');
         if ($request->isMethod('POST')){
             $active = !empty($request->get('active')) ? 1 : 0 ;
-            $progressData = ['active' => $active,'name' => $request->get('name')];
+            $progressData = ['active' => $active,
+                'name' => $request->get('name'),
+                'type' => $request->get('type')];
             $this->validateMaker = $this->progressPost($request,$progressData)->parseMessageToValidateMaker();
         }
         if ($request->isMethod('GET')){

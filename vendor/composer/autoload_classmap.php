@@ -9,6 +9,8 @@ return array(
     'AddFanPagePathColumn' => $baseDir . '/database/migrations/2017_03_01_060100_add_fan_page_path_column.php',
     'AddNewspaperPathColumn' => $baseDir . '/database/migrations/2017_03_01_055606_add_newspaper_path_column.php',
     'AddSocialInfoPathColumn' => $baseDir . '/database/migrations/2017_03_01_060023_add_social_info_path_column.php',
+    'AddTypeToSessionDayTable' => $baseDir . '/database/migrations/2017_03_02_150355_add_type_to_session_day_table.php',
+    'AddTypeToSocialContentTypeTable' => $baseDir . '/database/migrations/2017_03_02_150744_add_type_to_social_content_type_table.php',
     'CreateCategoryTable' => $baseDir . '/database/migrations/2017_03_01_030609_create_category_table.php',
     'CreateFanPageTable' => $baseDir . '/database/migrations/2017_03_01_041922_create_fan_page_table.php',
     'CreateNewsTable' => $baseDir . '/database/migrations/2017_03_01_040511_create_news_table.php',
