@@ -20,7 +20,7 @@
                                 <th>Post Content</th>
                                 <th>Post Image</th>
                                 <th>Full Link</th>
-                                <th>Status</th>
+                                <th>Create</th>
                                 <th>Action</th>
                             </tr>
                             <?php
@@ -51,7 +51,8 @@
                                     $labeName = $list['active']?"Active" : "Block";
 
 
-                                    echo '<td><span class="label '.$labeClass.'">'.$labeName.'</span></td>';
+                                    //echo '<td><span class="label '.$labeClass.'">'.$labeName.'</span></td>';
+                                    echo '<td>'.$list['created_at'].'</td>';
                                     echo '<td><a href="'.$edit_url.'" class=" col-sm-3 btn btn-sm btn-info btn-flat pull-left">Edit</a>
                                           '.$status_button.'
                                           <a href= "'.$delete_url.'" class="col-sm-3 btn btn-sm btn-danger btn-flat pull-left">Delete</a>
