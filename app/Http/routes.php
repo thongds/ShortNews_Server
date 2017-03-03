@@ -105,7 +105,7 @@ Route::group(['namespace' => 'Admin\Setting'],function (){
 
 Route::get('api/news/getnews','Api\v1\NewsController@getNews');
 
-Route::get('api/news/getsocial','Api\v1\SocialController@getSocial');
+Route::get('api/getsocial/{page}','Api\v1\SocialController@getSocial')->where('page','[0-9]+');
 
 
 

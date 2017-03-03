@@ -8,8 +8,8 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Http\Controllers\BaseAdminController\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 class SocialController extends Controller{
     public function getSocial($page){
         $number_row = 10;
@@ -24,13 +24,9 @@ class SocialController extends Controller{
                 ,$social_media.'.full_link',$fan_page.'.name as fanpage_name',$social_media.'.social_content_type_id'
                 ,$fan_page.'.logo as fanpage_logo',
                 $social_info.'.name as social_name',$social_info.'.logo as social_logo',$social_info.'.color_tag',$social_info.'.video_tag')
-            ->where([['social_media.status',1],['fan_page.status',1],['social_info.status',1],['social_content_type.status',1]])
-            ->offset($page*$number_row)->limit($number_row)->orderBy('created','desc')->get();
-        if(false){
-            return response()->json($data,204);
-        }else{
-            return response()->json($data);
-        }
+            ->where([['social_media.active',1],['fan_page.active',1],['social_info.active',1],['social_content_type.active',1]])
+            ->offset($page*$number_row)->limit($number_row)->orderBy('social_media.created_at','desc')->get();
+         return response(json_encode($data),200);
     }
 
 }
