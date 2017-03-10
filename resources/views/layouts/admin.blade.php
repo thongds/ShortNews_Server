@@ -363,7 +363,7 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{URL("admin/event")}}"><i class="fa fa-circle-o"></i>Event Controll</a></li>
+                        <li><a href="{{URL("admin/welcome-message")}}"><i class="fa fa-circle-o"></i>Welcome Message</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

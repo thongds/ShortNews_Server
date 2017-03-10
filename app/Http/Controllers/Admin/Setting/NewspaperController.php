@@ -22,7 +22,7 @@ class NewspaperController extends  CDUAbstractController{
     private $privateKey = 'id';
     private $validateForm = ['name'=>'required|max:255','video_tag_image' => 'required'];
     private $validateFormUpdate = ['name'=>'required|max:255'];
-    private $pagingNumber = 3;
+    private $pagingNumber = 10;
     private $mValidateMaker;
     public function __construct(){
         $this->mValidateMaker = Validator(array(),array(),array());
@@ -51,7 +51,7 @@ class NewspaperController extends  CDUAbstractController{
     }
     public function returnView($data)
     {
-        $listData = $this->mainModel->orderBy('created_at')->paginate($this->pagingNumber);
+        $listData = $this->mainModel->orderBy('created_at','desc')->paginate($this->pagingNumber);
         $view = view('admin/setting/newsPaper.newsPaperIndex',['listData'=>$listData,'router' => $this->routers,'page'=>$this->page,
             'isEdit'=>$this->request->get('isEdit'),'update_data' =>$this->mUpdateData]);
         if($this->mValidateMaker!=null && count($this->mValidateMaker->errors()->toArray())>0)

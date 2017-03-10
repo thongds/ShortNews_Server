@@ -99,6 +99,9 @@ Route::group(['namespace' => 'Admin\Setting'],function (){
     //setting social media
     Route::get('admin/social-media','SocialMediaController@index')->name('get_social_media');
     Route::post('admin/social-media','SocialMediaController@index')->name('post_social_media');
+    //setting social media
+    Route::get('admin/welcome-message','WelcomeMessageController@index')->name('get_welcome_message');
+    Route::post('admin/welcome-message','WelcomeMessageController@index')->name('post_welcome_message');
 
 
 });

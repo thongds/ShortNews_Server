@@ -282,6 +282,7 @@ class ComposerStaticInita58cdf2816d1853ea58abe1f2dac03d7
         'CreateSocialContentTypeTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_01_042014_create_social_content_type_table.php',
         'CreateSocialInfoTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_01_041842_create_social_info_table.php',
         'CreateSocialMediaTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_01_042059_create_social_media_table.php',
+        'CreateWelcomeMessageTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_10_085703_create_welcome_message_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

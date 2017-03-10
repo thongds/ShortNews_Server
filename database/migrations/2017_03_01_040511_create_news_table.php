@@ -15,7 +15,7 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $this->generateTable($table);
             $table->string("post_title");
-            $table->string("post_content");
+            $table->text("post_content");
             $table->boolean("is_video");
             $table->string("post_image");
             $table->string("video_link")->nullable();

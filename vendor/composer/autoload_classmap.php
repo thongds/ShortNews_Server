@@ -19,6 +19,7 @@ return array(
     'CreateSocialContentTypeTable' => $baseDir . '/database/migrations/2017_03_01_042014_create_social_content_type_table.php',
     'CreateSocialInfoTable' => $baseDir . '/database/migrations/2017_03_01_041842_create_social_info_table.php',
     'CreateSocialMediaTable' => $baseDir . '/database/migrations/2017_03_01_042059_create_social_media_table.php',
+    'CreateWelcomeMessageTable' => $baseDir . '/database/migrations/2017_03_10_085703_create_welcome_message_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
