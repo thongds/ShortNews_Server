@@ -102,6 +102,9 @@ Route::group(['namespace' => 'Admin\Setting'],function (){
     //setting social media
     Route::get('admin/welcome-message','WelcomeMessageController@index')->name('get_welcome_message');
     Route::post('admin/welcome-message','WelcomeMessageController@index')->name('post_welcome_message');
+    //setting advertisement
+    Route::get('admin/ads','AdvertisementController@index')->name('get_ads');
+    Route::post('admin/ads','AdvertisementController@index')->name('post_ads');
 
 
 });

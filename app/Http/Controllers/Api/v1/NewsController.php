@@ -60,9 +60,34 @@ class NewsController extends  Controller{
             $message['avatar'] = count($msgData) > 0 ?$msgData[0]['avatar'] : "empty avatar";
         }
         $returnData = $this->querySimpleData($page);
+        $returnData = $this->addAdvertisementData($returnData,$page);
         $data['message'] = $message;
         $data['data'] = $returnData;
         return response(json_encode($data),200);
+
+    }
+    public function addAdvertisementData(Array $data,$page){
+
+        $fakeArray = array('post_title' => ' ','post_content' => ' ',
+        'post_image' => ' ','is_video' => 0,'created' => ' ','video_link' => ' ','full_link' => ' ',
+        'title_color'=>' ','paper_logo'=>' ','paper_tag_color' => ' ',
+        'video_tag_image' => '','is_ads' => 1,'ads_code' => ' ');
+        $adsData = DB::table('advertisement')->select('post_image','full_link','at_page','at_position','ads_code')
+            ->where('active','=','1')->get();
+        if(count($adsData) > 0) {
+            foreach ($adsData as $value){
+                if($value['at_page'] == $page){
+//                    var_dump($data);
+//                    var_dump($value);
+                    $fakeArray['post_image'] = $value['post_image'];
+                    $fakeArray['full_link'] = $value['full_link'];
+                    $fakeArray['ads_code'] = $value['ads_code'];
+                    array_splice($data,3,0,array($fakeArray));
+                    //var_dump($data);
+                }
+            }
+        }
+        return $data;
 
     }
     public function querySimpleData($page){
@@ -71,7 +96,7 @@ class NewsController extends  Controller{
             ->select('news.post_title','news.post_content','news.post_image',
                 'news.is_video','news.created_at as created','news.video_link','news.full_link'
                 ,'newspaper.title_color','newspaper.paper_logo',
-                'newspaper.paper_tag_color','newspaper.video_tag_image')
+                'newspaper.paper_tag_color','newspaper.video_tag_image','news.is_ads','news.ads_code')
             ->where([
                 ['news.active','=',1],
                 ['newspaper.active','=',1],

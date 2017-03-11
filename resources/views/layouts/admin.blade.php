@@ -357,13 +357,24 @@
                 </li>
                 <li class="active treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Event Controll</span>
+                        <i class="fa fa-dashboard"></i> <span>Event Control</span>
                         <span class="pull-right-container">
                              <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{URL("admin/welcome-message")}}"><i class="fa fa-circle-o"></i>Welcome Message</a></li>
+                    </ul>
+                </li>
+                <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Advertisement Control</span>
+                        <span class="pull-right-container">
+                             <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{URL("admin/ads")}}"><i class="fa fa-circle-o"></i>Advertisement-Setting</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

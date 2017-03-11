@@ -20,6 +20,9 @@ class CreateNewsTable extends Migration
             $table->string("post_image");
             $table->string("video_link")->nullable();
             $table->string("full_link");
+            $table->boolean('is_ads')->default(false);
+            $table->string("ads_code")->nullable();
+
             $table->unsignedInteger("newspaper_id");
             $table->unsignedInteger("category_id");
             $table->unsignedInteger("session_day_id");
