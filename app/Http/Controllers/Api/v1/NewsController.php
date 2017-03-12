@@ -79,10 +79,15 @@ class NewsController extends  Controller{
                 if($value['at_page'] == $page){
 //                    var_dump($data);
 //                    var_dump($value);
+
+                    $countData = count($data);
+                    $value['at_position'] = $value['at_position'] >= $countData?$countData-1 : $value['at_position'];
                     $fakeArray['post_image'] = $value['post_image'];
                     $fakeArray['full_link'] = $value['full_link'];
                     $fakeArray['ads_code'] = $value['ads_code'];
-                    array_splice($data,3,0,array($fakeArray));
+                    array_splice($data,$value['at_position'],0,array($fakeArray));
+//                    if($page == 1)
+//                        var_dump($data);exit;
                     //var_dump($data);
                 }
             }

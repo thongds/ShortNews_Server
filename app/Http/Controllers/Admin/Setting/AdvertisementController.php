@@ -23,7 +23,7 @@ class AdvertisementController extends CDUAbstractController {
     private $privateKey = 'id';
     private $fieldFile = array('post_image');
     private $fieldPath = array('post_image_path');
-    private $validateForm = ['ads_host'=>'required|max:255','ads_code|max:255' => 'required','post_image'=>'required','type' =>'required|numeric',
+    private $validateForm = ['ads_host'=>'required|max:255','ads_code' => 'required|max:255','post_image'=>'required','type' =>'required|numeric',
         'full_link' =>'required','at_page' =>'required|numeric','at_position' =>'required|numeric'];
     private $validateFormUpdate = ['ads_host'=>'required|max:255','ads_code' => 'required|max:255','type' =>'required|numeric',
         'full_link' =>'required','at_page' =>'required|numeric','at_position' =>'required|numeric'];
