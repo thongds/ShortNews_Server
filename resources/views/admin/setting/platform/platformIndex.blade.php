@@ -17,9 +17,9 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Type</th>
                                 <th>Status</th>
                                 <th>Action</th>
-                                <th>Created</th>
                             </tr>
                             <?php
                             if($listData){
@@ -37,21 +37,21 @@
                                     }else{
                                         $class = "";
                                         $active_url =url()->current().'?page='.$page.'&active=0&id='.$list['id'];
-                                        $status_button = '<a href='.$active_url.'  class=" col-sm-3 btn btn-sm btn-warning btn-flat pull-left">Deactive</a>';
+                                        $status_button = '<a href='.$active_url.'  class=" col-sm-4 btn btn-sm btn-warning btn-flat pull-left">Deactive</a>';
                                     }
                                     echo '<tr class="'.$class.'">';
                                     echo '<td>'.$list['id'].'</td>';
                                     echo '<td class="col-md-4">'.$list['name'].'</td>';
+                                    echo '<td class="col-md-2">'.$list['type'].'</td>';
                                     $labeClass = $list['active']?"label-success" : "label-danger";
                                     $labeName = $list['active']?"Active" : "Block";
 
 
                                     echo '<td><span class="label '.$labeClass.'">'.$labeName.'</span></td>';
-                                    echo '<td><a href="'.$edit_url.'" class=" col-sm-3 btn btn-sm btn-info btn-flat pull-left">Edit</a>
+                                    echo '<td><a href="'.$edit_url.'" class=" col-sm-4 btn btn-sm btn-info btn-flat pull-left">Edit</a>
                                           '.$status_button.'
-                                          <a href= "'.$delete_url.'" class="col-sm-3 btn btn-sm btn-danger btn-flat pull-left">Delete</a>
+                                          <a href= "'.$delete_url.'" class="col-sm-4 btn btn-sm btn-danger btn-flat pull-left">Delete</a>
                                           </td>';
-                                    echo '<td>'.$list['created_at'].'</td>';
                                     echo '<tr>';
 
                                 }
@@ -96,8 +96,13 @@
                 <div class="box-body">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Category Name</label>
+                        <label for="exampleInputEmail1">Platform Name</label>
                         <input type="input" name ="name" value = "<?php echo $update_data!=null?$update_data["name"]:""; ?>" class="form-control" id="exampleInputEmail1" >
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Type</label>
+                        <input type="input" name ="type" value = "<?php echo $update_data!=null?$update_data["type"]:""; ?>" class="form-control" id="exampleInputEmail1" >
 
                     </div>
                     <div class="checkbox">

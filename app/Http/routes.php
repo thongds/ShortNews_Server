@@ -105,11 +105,21 @@ Route::group(['namespace' => 'Admin\Setting'],function (){
     //setting advertisement
     Route::get('admin/ads','AdvertisementController@index')->name('get_ads');
     Route::post('admin/ads','AdvertisementController@index')->name('post_ads');
+    //setting platform
+    Route::get('admin/platform','PlatformController@index')->name('get_platform');
+    Route::post('admin/platform','PlatformController@index')->name('post_platform');
+    //setting support version
+    Route::get('admin/support-version','SupportVersionController@index')->name('get_support_version');
+    Route::post('admin/support-version','SupportVersionController@index')->name('post_support_version');
 
 
 });
+Route::group(['namespace' => 'Api\v1'],function (){
 
-Route::get('api/news/getnews','Api\v1\NewsController@getNews');
+    Route::get('api/news/getnews','NewsController@getNews');
+    Route::post('api/home/check-version','HomeController@checkVersion');
+});
+//Route::get('api/news/getnews','Api\v1\NewsController@getNews');
 
 Route::get('api/getsocial/{page}','Api\v1\SocialController@getSocial')->where('page','[0-9]+');
 

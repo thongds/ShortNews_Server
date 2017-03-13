@@ -368,6 +368,20 @@
                 </li>
                 <li class="active treeview">
                     <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Support Version Control</span>
+                        <span class="pull-right-container">
+                             <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{URL("admin/platform")}}"><i class="fa fa-circle-o"></i>Platform Setting</a></li>
+                    </ul>
+                    <ul class="treeview-menu">
+                        <li><a href="{{URL("admin/support-version")}}"><i class="fa fa-circle-o"></i>Support Version</a></li>
+                    </ul>
+                </li>
+                <li class="active treeview">
+                    <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Advertisement Control</span>
                         <span class="pull-right-container">
                              <i class="fa fa-angle-left pull-right"></i>
